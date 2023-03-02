@@ -44,7 +44,7 @@
 
 #### Install node_modules
 
-`npm install`
+`yarn install`
 
 #### Run iOS
 
@@ -79,7 +79,7 @@
 2. Create react-native.config.js file and add these : [here](react-native.config.js)
 3. Fire this command : `react-native link`
    Reference - https://kswanie21.medium.com/custom-fonts-in-react-native-tutorial-for-ios-android-76ceeaa0eb78
-
+  
 ## Use SVG as component
 
 1. Here are the steps for integration and how to use it - https://www.npmjs.com/package/react-native-svg#use-with-svg-files
