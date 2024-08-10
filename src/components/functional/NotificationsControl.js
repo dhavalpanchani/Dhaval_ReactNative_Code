@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { removeNotification } from '../../store/notifications';
 import { Headline, Subhead } from './TypographyText';
 
-import CloseIcon from '@assets/appImages/CloseIcon.svg';
+import CloseIcon from '../../assets/appImages/CloseIcon.svg';
 import { boxShadow, scaleSize } from '../../styles/mixins';
 import { colors } from '../../styles/theme';
 import { SF_PRO_TEXT_SEMIBOLD } from '../../styles/typography';

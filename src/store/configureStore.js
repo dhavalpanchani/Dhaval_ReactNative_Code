@@ -1,9 +1,9 @@
 import { applyMiddleware, createStore } from 'redux';
 import thunk from 'redux-thunk';
-import { composeWithDevTools } from 'redux-devtools-extension';
 import { createReducerManager } from './reducerManager';
 import auth from './auth';
 import notifications from './notifications';
+import { composeWithDevTools } from '@redux-devtools/extension';
 
 const initialReducers = {
   auth,

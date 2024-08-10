@@ -134,12 +134,12 @@ const LogIn = ({ navigation }) => {
             >
               {showAndHideRememberMe ? (
                 <Image
-                  source={require('@assets/appImages/empty-checkbox.png')}
+                  source={require('../../assets/appImages/empty-checkbox.png')}
                   style={styles.ImgSty}
                 />
               ) : (
                 <Image
-                  source={require('@assets/appImages/Check-box.png')}
+                  source={require('../../assets/appImages/Check-box.png')}
                   style={styles.ImgSty}
                 />
               )}

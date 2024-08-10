@@ -1,4 +1,4 @@
-import produce from 'immer';
+import {produce} from 'immer';
 
 const SET_AUTH_TOKEN = 'SET_AUTH_TOKEN';
 const REMOVE_AUTH_TOKEN = 'REMOVE_AUTH_TOKEN';

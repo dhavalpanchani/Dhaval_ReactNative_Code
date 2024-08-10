@@ -1,120 +1,79 @@
-# Dhaval React native Code
+This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
 
-## This project is built with [React Native](https://reactnative.dev/)
+# Getting Started
 
-#### ====> macOS requirements:
+>**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
 
-**_It is recommended to use [Homebrew](https://brew.sh/) for installing_**
+## Step 1: Start the Metro Server
 
-##### 1. iOS:
+First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
 
-> - node
-> - watchman
-> - cocoapods
-> - Xcode
+To start Metro, run the following command from the _root_ of your React Native project:
 
-##### 2. Android:
+```bash
+# using npm
+npm start
 
-> - node
-> - watchman
-> - cocoapods
-> - JDK (Java Development Kit)
-> - Android Studio
-> - Android SDK
+# OR using Yarn
+yarn start
+```
 
-#### ====> Linux requirements:
+## Step 2: Start your Application
 
-- ##### Android:
-  > - node
-  > - watchman
-  > - JDK (Java Development Kit)
-  > - Android Studio
-  > - Android SDK
+Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
 
-###### References:
+### For Android
 
-- https://medium.com/@randerson112358/setup-react-native-environment-for-ios-97bf7faadf77
-- https://reactnative.dev/docs/environment-setup (Official Documentation for environment setup)
+```bash
+# using npm
+npm run android
 
-## Running the APP :runner:
+# OR using Yarn
+yarn android
+```
 
-- #### Go to `scripts` section inside `package.json` file to see available commands
+### For iOS
 
-## Additional instructions to `run` and `build`
+```bash
+# using npm
+npm run ios
 
-#### Install node_modules
+# OR using Yarn
+yarn ios
+```
 
-`npm install`
+If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
 
-#### Run iOS
+This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
 
-`cd ios`
-`pod install`
-`react-native run-ios`
+## Step 3: Modifying your App
 
-#### Run Android
+Now that you have successfully run the app, let's modify it.
 
-`cd android`
-`gradlew clean`
-`cd ..`
-`react-native run-android`
+1. Open `App.tsx` in your text editor of choice and edit some lines.
+2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
 
-## macOS Android installDebug build error fix
+   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
 
-1. find your Java JDK home (usually in /Library/Java/JavaVirtualMachines/ )
-2. export JAVA_HOME path using: export JAVA_HOME="<your path>"
+## Congratulations! :tada:
 
-## Rename Project
+You've successfully run and modified your React Native App. :partying_face:
 
-1. `cd "project path"`
-2. `npx react-native-rename "put here project name"`
-3. With custom Bundle Identifier (Android only. For iOS, please use Xcode)
-   `npx react-native-rename "put here project name" -b <bundleIdentifier>`
-4. Go to `scripts` section inside `package.json` file and run `clear_cache` script (`watchman watch-del-all && rm -f package-lock.json && rm -rf node_modules && npm install && cd ios && rm -f Podfile.lock && rm -rf Pods && pod install`)
-   Reference - https://www.npmjs.com/package/react-native-rename
+### Now what?
 
-## Add Custom Fonts
+- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
+- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
 
-1. Add all the fonts [here](src/assets/fonts)
-2. Create react-native.config.js file and add these : [here](react-native.config.js)
-3. Fire this command : `react-native link`
-   Reference - https://kswanie21.medium.com/custom-fonts-in-react-native-tutorial-for-ios-android-76ceeaa0eb78
+# Troubleshooting
 
-## Use SVG as component
+If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
 
-1. Here are the steps for integration and how to use it - https://www.npmjs.com/package/react-native-svg#use-with-svg-files
-2. Add the .svg files in assets/ and use it as component directly.
+# Learn More
 
-## Define the coding standards
+To learn more about React Native, take a look at the following resources:
 
-1. Navigation component - It's contains AppNavigator and AuthNavigator. In AuthNavigator flow contains authentication related screen flow and AppNavigator It's contains application remaining screen flow (features) after login. [Check here](src/navigation/index.js)
-2. How to create new reducers - Create new redux file inside [store folder](src/store) and declare it in [configureStore file.](src/store/configureStore.js) ![image preview](ScreenShots/declareReducer.png)
-3. Coding standard
-   ![image preview](ScreenShots/1.jpeg)
-   ![image preview](ScreenShots/2.jpeg)
-4. Theme or Global Component - Need to use the [Block Component](src/components/utilities/Block.js) instead of [View](https://reactnative.dev/docs/view) and [Text component](src/components/utilities/Text.js) instead of [Text](https://reactnative.dev/docs/text)
-5. [Global Theme Styles](src/styles/theme.js)
-
-## Folder wise description
-
-1. assets - contains all the font family files, png and svg files.
-2. components - contains all the components that can be used across multiple screens.
-3. config - contains the environment level details and configuration.
-4. constants - contains all API list and global links that can be used across multiple screens.
-5. data - contains static portion of content in the application.
-6. helpers - having all the shared and helper files for the whole application.
-7. hooks - Global level function calls for the whole application.
-8. navigation - has the code related to navigation across the application.
-9. resources - has the one time configuartion, like APIs call.
-10. screens - all the screens and parent components are placed in this folder.
-11. store - has the one time configuartion related and dispatches actions to the redux store.
-12. styles - Global level style sheet for the whole application.
-
-## Code Formatter
-
-1. Install the Prettier (https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) and ESLint (https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) VS Code plugin.
-2. Open the Command Palette (under the View submenu, or using Cmd+Shift+P on Mac and Ctrl+Shift+P on Windows). Then select "Extensions: Install Extensions". (Reference - https://www.codereadability.com/automated-code-formatting-with-prettier/)
-3. Search for "Prettier" or "ESLint", click "Install", and then "Reload" once the installation is complete.
-4. Set default formatter by these steps : Right click on any .js file --> Format Document With... --> Configure Default Formatter... --> "Prettier - Code formatter"
-5. Format document or selection lines : Right click on .js file --> Format Document or Format Selection.
-6. Optional - To automatically format the file on saving - https://levelup.gitconnected.com/automatically-format-code-in-visual-studio-code-when-working-with-react-c48674a12dc5
+- [React Native Website](https://reactnative.dev) - learn more about React Native.
+- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
+- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
+- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
+- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
